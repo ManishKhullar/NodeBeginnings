@@ -1,0 +1,60 @@
+{
+    "invalidParams": {
+        "code": 500,
+        "message": "Invaild parameters"
+    },
+    "invalidData": {
+        "code": 500,
+        "message": "Invaild Data"
+    },
+    "databaseError": {
+        "code": 500,
+        "message": "Database connection error.Please try after sometime."
+    },
+    "insertionSuccessfull": {
+        "code": 200,
+        "message": "Data Submitted Successfully"
+    },
+    "invalidCredentials": {
+        "code": 500,
+        "message": "Username & Password does not match"
+    },
+    "loginSuccessfull": {
+        "code": 200,
+        "message": "User Logged In Successfully"
+    },
+    "noRecordsFound": {
+        "code": 500,
+        "message": "User not found"
+    },
+    "updatedSuccessfully": {
+        "code": 200,
+        "message": "Updated Successfully."
+    },
+    "unauthorizedAccess": {
+        "code": 401,
+        "message": "Unauthorized Access"
+    },
+    "sessionExpired": {
+        "code": 402,
+        "message": "Session expire. Please login again."
+    },
+    "refreshTokenExpired": {
+        "code": 403,
+        "message": "Refresh token is expired. Please login again."
+    },
+    "usersMapping": {
+        "id": "id",
+        "Name": "Name",
+        "HasAccount": "HasAccount",
+        "Contact no": "Contact no"
+    },
+    "errorOccured": {
+        "code": 500,
+        "message": "Something went wrong.Please try after sometime."
+    },
+    "insufficientBalance": {
+        "code": 500,
+        "message": "Insufficient balance available."
+    }
+}
