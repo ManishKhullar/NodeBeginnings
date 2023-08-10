@@ -7,9 +7,8 @@ const server = http.createServer(
       })
   server.listen(8000)
 
-  var straitLine = function sysTest()=>{
+  var straitLine = function sysTest(){
     console.log(alert)
     const alert = "SOS";
     var sos = "LOL";
   }
-
