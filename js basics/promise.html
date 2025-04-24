@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function loadScript(src){
+            return new Promise(function(resolve, reject){
+                // setTimeout(()=>resolve("done"),2000)});
+                // promise.then(alert);
+                // function loadScript(src, callback){
+                    // console.log(document.createElement('script'));
+                    // console.log(`document.createElement('script')`);
+                    let script = document.createElement('script');
+                    // script.src = this.src;
+                    script.src = src;
+                    
+                    script.addEventListener('load', () => {
+                        resolve(script);
+                    });
+                    script.addEventListener('error', () => {
+                        reject(new Error(`Script load error for ${src}`));
+                    });
+                    // script.onload() = function(){ resolve(script);}//FIXME: Uncaught (in promise) TypeError: script.onload is not a function
+                    // script.onerror() = function(){ reject(new Error(`This is the error Manish got ${src}`));}
+                    // window.onload() = function() { resolve(script);}
+                    // window.onerror() = function() { reject(new Error(`This is the error Manish got ${src}`));}
+                    if(document.head)
+                        document.head.append(script);
+                    else
+                        reject(new Error("Document Head is not available"));
+                });
+            }    
+        /*    
+        (async () => {
+            try{
+                const script = await loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js');
+                console.log(`${script.src} has loaded!`);
+            }
+            catch(error){
+                console.error(error);
+            }
+        })();
+            */
+        let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+        promise.then(
+            script => console.log(`${script.src} is loaded`),
+            error => console.log(`Error: ${error.message}`)
+        );    
+        promise.then(
+            script => alert(`Another Handler!...`)
+        );    
+    </script>
+</body>
+</html>
+
